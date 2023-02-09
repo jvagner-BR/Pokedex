@@ -97,8 +97,6 @@ async function getPokemon(num) {
   res = await fetch(pokemon["species"]["url"]);
   let = pokemonDesc = await res.json();
 
-  //intergração de cores com o css
-
   pokemonDesc = pokemonDesc["flavor_text_entries"][9]["flavor_text"];
 
   pokedex[num] = {
@@ -126,7 +124,6 @@ function filterFunction() {
   ul = document.getElementById("myUL");
   col = ul.getElementsByClassName("col");
 
-  // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < col.length; i++) {
     samp = col[i].getElementsByClassName("pokemon-name")[0];
     txtValue = samp.textContent || samp.innerText;
@@ -137,18 +134,3 @@ function filterFunction() {
     }
   }
 }
-
-// const sortType = document.querySelector('#sort-type')
-
-// function sortPokedex(pokedex, sortType) {
-//   switch(sort) {
-//     case 'Lowest Number (First)':
-//       return pokedex.sortType((a, b) => a.id > b.id ? 1 : a.id < b.id ? -1 : 0)
-//     case 'Highest Number (First)':
-//       return pokedex.sortType((a, b) => a.id > b.id ? -1 : a.id < b.id ? 1 : 0)
-//     case 'A-Z':
-//       return pokedex.sortType((a, b) => a.name > b.name ? 1 : a.name < b.name ? -1 : 0)
-//     case 'Z-A':
-//       return pokedex.sortType((a, b) => a.name > b.name ? -1 : a.name < b.name ? 1 : 0)
-//   }
-// }
